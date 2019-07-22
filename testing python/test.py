@@ -1,7 +1,7 @@
 import math
 
 primes = [2]
-isprime = False
+isprime = True
 x = 2
 highest = 0
 
@@ -9,9 +9,11 @@ while x < 600851475143:
 
     for y in primes:
         if(x%y == 0):
+            isprime = False
             break
-        elif (x % y != 0):
-            primes.append(x)
+    if(isprime == True):
+        primes.append(x)
+    isprime = True
 
     x = x + 1
 for z in primes:
